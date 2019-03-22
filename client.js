@@ -1,4 +1,4 @@
-const { Collection } = require("discord.js");
+const Discord = require("discord.js");
 const client = new Discord.Client();
 const Enmap = require("enmap");
 const fs = require("fs");
