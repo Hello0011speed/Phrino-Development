@@ -13,7 +13,7 @@ client.on('ready', () => {
 })
 
 client.on('message', (message) => {
-    if(message.content.startsWith(config.prefix + "serverinfo")) {
+    if(message.content.startsWith("!serverinfo")) {
         const embed = new Discord.RichEmbed()
             .setTitle('Phrino Dev · Server Stats')
             .setDescription("Members: " + guild.users.size);
