@@ -17,7 +17,7 @@ client.on('message', (message) => {
         const embed = new Discord.RichEmbed()
             .setTitle('Phrino Dev · Server Stats')
             .setAuthor("Phrino Dev", "https://media.discordapp.net/attachments/557338439046135850/558691033437831188/Photo_20190322_133821.png?width=300&height=300")
-            .setDescription("Members: " + guild.users.size);
+            .setDescription("Members: ");
     
     }
     message.channel.send({embed})
