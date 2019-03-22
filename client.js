@@ -2,7 +2,8 @@ const Discord = require("discord.js");
 const client = new Discord.Client();
 const Enmap = require("enmap");
 const fs = require("fs");
-
+const { Collection } = require("discord.js");
+client.commands = new Collection();
 
 client.on('ready', () => {
     console.log('I am ready!');
