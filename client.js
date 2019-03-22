@@ -1,4 +1,5 @@
 const Discord = require("discord.js");
+const client = new Discord.Client();
 
 
 client.on('ready', () => {
@@ -11,7 +12,6 @@ client.on('ready', () => {
     client.channels.get("557348230245908482").send({embed});
 });
 
-const client = new Discord.Client();
 
 
 client.login(process.env.BOT_TOKEN);
