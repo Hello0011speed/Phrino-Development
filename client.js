@@ -17,9 +17,9 @@ const config = require("./config.json");
 // We also need to make sure we're attaching the config to the CLIENT so it's accessible everywhere!
 client.config = config;
 
-fs.readdir("./events/", (err, files) => {
+fs.readdir("./events/", (err, file) => {
   if (err) return console.error(err);
-  files.forEach(file => {
+  file.forEach(file => {
     const event = require(`./events/${file}`);
     let eventName = file.split(".")[0];
     client.on(eventName, event.bind(null, client));
@@ -28,9 +28,9 @@ fs.readdir("./events/", (err, files) => {
 
 client.commands = new Enmap();
 
-fs.readdir("./commands/", (err, files) => {
+fs.readdir("./commands/", (err, file) => {
   if (err) return console.error(err);
-  files.forEach(file => {
+  file.forEach(file => {
     if (!file.endsWith(".js")) return;
     let props = require(`./commands/${file}`);
     let commandName = file.split(".")[0];
