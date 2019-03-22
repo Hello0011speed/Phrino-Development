@@ -12,6 +12,4 @@ client.on('ready', () => {
     client.channels.get("557348230245908482").send({embed});
 })
 
-
-
 client.login(process.env.BOT_TOKEN);
