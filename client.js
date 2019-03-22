@@ -3,7 +3,7 @@ const client = new Discord.Client();
 const Enmap = require("enmap");
 const fs = require("fs");
 const { Collection } = require("discord.js");
-client.commands = new Collection();
+
 
 client.on('ready', () => {
     console.log('I am ready!');
@@ -27,7 +27,7 @@ fs.readdir("./events/", (err, files) => {
     });
   });
 
-client.commands = new Enmap();
+client.commands = new Collection();
 
 fs.readdir("./commands/", (err, files) => {
   if (err) return console.error(err);
