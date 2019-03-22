@@ -1,8 +1,8 @@
-const Discord = require('discord.js');
-const client = new Discord.Client();
+const Discord = require("discord.js");
 const Enmap = require("enmap");
 const fs = require("fs");
 
+const client = new Discord.Client();
 const config = require("./config.json");
 // We also need to make sure we're attaching the config to the CLIENT so it's accessible everywhere!
 client.config = config;
