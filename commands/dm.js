@@ -4,7 +4,7 @@ exports.run = async (client, message, args, level) => { // eslint-disable-line n
     let embed = new Discord.RichEmbed()
         .setTitle("Phrino · Moderation Message")
         .setDescription('DM sent to user:' + message.mentions.users.first())
-        .setColor("#FF0000")
+        .setColor("#FF0000");
     
     message.channel.send(embed)
     userToSend.send(messageToSend);
