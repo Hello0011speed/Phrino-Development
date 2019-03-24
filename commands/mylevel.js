@@ -1,9 +1,6 @@
 exports.run = async (client, message, args, level) => {
     const friendly = client.config.permLevels.find(l => l.level === level).name;
-    const embed = new Discord.RichEmbed()
-      .setTitle("Phrino Dev · Permission")
-      .setDescription(`Your level: ${level} \n Level name: ${friendly}`);
-message.channel.send({embed});
+    message.reply(`Your permission level is: ${level} - ${friendly}`);
   };
   
   exports.conf = {
