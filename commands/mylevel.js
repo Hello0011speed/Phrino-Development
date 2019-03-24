@@ -3,7 +3,7 @@ exports.run = async (client, message, args, level) => {
     const embed = new Discord.RichEmbed()
       .setTitle("Phrino Dev · Permission")
       .setDescription(`Your level: ${level} \n Level name: ${friendly}`);
-  message.channel.send({embed});
+message.channel.send({embed});
   };
   
   exports.conf = {
