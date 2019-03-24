@@ -39,9 +39,11 @@ const init = async () => {
   }
 
   // Here we login the client.
-  client.login(process.env.BOT_TOKEN);
+
 
 // End top-level async/await function.
 };
 
 init();
+
+client.login(process.env.BOT_TOKEN);
