@@ -6,7 +6,7 @@ exports.run = async (client, message, args, level) => { // eslint-disable-line n
         .setDescription('DM sent to user:' + message.mentions.users.first())
         .setColor("#FF0000");
     
-    message.channel.send(embed);
+    message.channel.send({embed});
     userToSend.send(messageToSend);
   };
   
