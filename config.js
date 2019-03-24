@@ -86,7 +86,7 @@ const config = {
 
     // Bot Admin has some limited access like rebooting the bot or reloading commands.
     { level: 9,
-      name: "Bot Admin",
+      name: "Co-Founders",
       check: (message) => config.admins.includes(message.author.id)
     },
 
@@ -94,7 +94,7 @@ const config = {
     // The reason this should be the highest level is because of dangerous commands such as eval
     // or exec (if the owner has that).
     { level: 10,
-      name: "Bot Owner", 
+      name: "Founder", 
       // Another simple check, compares the message author id to the one stored in the config file.
       check: (message) => message.client.config.ownerID === message.author.id
     }
