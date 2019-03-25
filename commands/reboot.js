@@ -11,7 +11,7 @@ exports.run = async (client, message, args, level) => {// eslint-disable-line no
     enabled: true,
     guildOnly: false,
     aliases: [],
-    permLevel: "Bot Admin"
+    permLevel: "Founder"
   };
   
   exports.help = {
