@@ -50,7 +50,7 @@ exports.run = (client, message, args, level) => {
   
   exports.help = {
     name: "help",
-    category: "System",
+    category: "Miscelaneous",
     description: "Displays all the available commands for your permission level.",
     usage: "help [command]"
   };
