@@ -1,3 +1,4 @@
+const Discord = require ("discord.js");
 exports.run = async (client, message, args, level) => { // eslint-disable-line no-unused-vars
     let messageToSend = message.content.split(" ").slice(2).join(" ");
     let userToSend = message.mentions.users.first();
