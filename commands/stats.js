@@ -7,7 +7,7 @@ exports.run = (client, message, args, level) => { // eslint-disable-line no-unus
   const duration = moment.duration(client.uptime).format(" D [days], H [hrs], m [mins], s [secs]");
   const embed = new Discord.RichEmbed()
       .setTitle("Phrino · Stats")
-      .setDescription(`\n • Mem Usage: ${(process.memoryUsage().heapUsed / 1024 / 1024).toFixed(2)} MB \n • Uptime: ${duration} \n Users: ${client.users.size.toLocaleString()} \n Servers: ${client.guilds.size.toLocaleString()} \n Channels: ${client.channels.size.toLocaleString()}`)
+      .setDescription(`\n • Mem Usage: ${(process.memoryUsage().heapUsed / 1024 / 1024).toFixed(2)} MB \n • Uptime: ${duration} \n • Users: ${client.users.size.toLocaleString()} \n • Servers: ${client.guilds.size.toLocaleString()} \n • Channels: ${client.channels.size.toLocaleString()}`)
       .setAuthor("Phrino", "https://cdn.discordapp.com/icons/528818044668215299/6d1ccd655df1c562ef4f43835597fe10.png?")
       .setColor("#E51414")
       .setTimestamp();
