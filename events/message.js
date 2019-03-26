@@ -61,13 +61,13 @@ module.exports = async (client, message) => {
     if (cmd && !message.guild && cmd.conf.guildOnly)
       return message.channel.send("This command is unavailable via private message. Please run this command in a guild.");
   
-  if (level < client.levelCache[cmd.conf.permLevel]) {
-    if (settings.systemNotice === "true") {
-      return message.channel.send(`• Your Permission: ${level} \"${client.config.permLevels.find(l => l.level === level).name}\" \n • Required Permission: ${client.levelCache[cmd.conf.permLevel]} \"${cmd.conf.permLevel}\" `);
-    } else {
-      return;
+    if (level < client.levelCache[cmd.conf.permLevel]) {
+      if (settings.systemNotice === "true") {
+        return message.channel.send(`• Your Permission: ${level} \"${client.config.permLevels.find(l => l.level === level).name}\" \n • Required Permission: ${client.levelCache[cmd.conf.permLevel]} \"${cmd.conf.permLevel}\" `);
+      } else {
+       return;
+      }
     }
-  }
   
     // To simplify message arguments, the author's level is now put on level (not member so it is supported in DMs)
     // The "level" command module argument will be deprecated in the future.
