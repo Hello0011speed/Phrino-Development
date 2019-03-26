@@ -1,11 +1,26 @@
 // The MESSAGE event runs anytime a message is received
 // Note that due to the binding of client to every event, every event
+const Discord = require ("discord.js");
 // goes `client, other, args` when this function is run.
 
 module.exports = async (client, message) => {
     // It's good practice to ignore other bots. This also makes your bot ignore itself
     // and not get into a spam loop (we call that "botception").
     if (message.author.bot) return;
+
+    const noperm = new Discord.RichEmbed()
+      .setTitle("Phrino · Insuficient Permissions")
+      .setDescription(`• Your Permission: ${level} \"${client.config.permLevels.find(l => l.level === level).name}\" \n • Required Permission: ${client.levelCache[cmd.conf.permLevel]} \"${cmd.conf.permLevel}\" `)
+      .setAuthor("Phrino", "https://cdn.discordapp.com/icons/528818044668215299/6d1ccd655df1c562ef4f43835597fe10.png?")
+      .setColor("#E51414")
+      .setTimestamp();
+
+    const prefixe = new Discord.RichEmbed()
+      .setTitle("Phrino · Prefix")
+      .setDescription(`• Prefix: \*\*${settings.prefix}\*\*`)
+      .setAuthor("Phrino", "https://cdn.discordapp.com/icons/528818044668215299/6d1ccd655df1c562ef4f43835597fe10.png?")
+      .setColor("#E51414")
+      .setTimestamp();
   
     // Grab the settings for this server from Enmap.
     // If there is no guild, get default conf (DMs)
@@ -14,7 +29,7 @@ module.exports = async (client, message) => {
     // Checks if the bot was mentioned, with no message after it, returns the prefix.
     const prefixMention = new RegExp(`^<@!?${client.user.id}>( |)$`);
     if (message.content.match(prefixMention)) {
-      return message.reply(`My prefix on this guild is \`${settings.prefix}\``);
+      return message.channel.send(prefixe);
     }
   
     // Also good practice to ignore any message that does not start with our prefix,
@@ -48,9 +63,7 @@ module.exports = async (client, message) => {
   
     if (level < client.levelCache[cmd.conf.permLevel]) {
       if (settings.systemNotice === "true") {
-        return message.channel.send(`You do not have permission to use this command.
-    Your permission level is ${level} (${client.config.permLevels.find(l => l.level === level).name})
-    This command requires level ${client.levelCache[cmd.conf.permLevel]} (${cmd.conf.permLevel})`);
+        return message.channel.send(noperm);
       } else {
         return;
       }
@@ -68,3 +81,13 @@ module.exports = async (client, message) => {
     client.logger.cmd(`[CMD] ${client.config.permLevels.find(l => l.level === level).name} ${message.author.username} (${message.author.id}) ran command ${cmd.help.name}`);
     cmd.run(client, message, args, level);
   };
+
+//  if (level < client.levelCache[cmd.conf.permLevel]) {
+//    if (settings.systemNotice === "true") {
+//      return message.channel.send(`You do not have permission to use this command.
+//  Your permission level is ${level} (${client.config.permLevels.find(l => l.level === level).name})
+//  This command requires level ${client.levelCache[cmd.conf.permLevel]} (${cmd.conf.permLevel})`);
+//    } else {
+//      return;
+//    }
+//  }
