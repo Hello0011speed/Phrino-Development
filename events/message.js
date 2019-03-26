@@ -29,7 +29,7 @@ module.exports = async (client, message) => {
     // Checks if the bot was mentioned, with no message after it, returns the prefix.
     const prefixMention = new RegExp(`^<@!?${client.user.id}>( |)$`);
     if (message.content.match(prefixMention)) {
-      return message.channel.send(prefixe);
+      return message.channel.send({prefixe});
     }
   
     // Also good practice to ignore any message that does not start with our prefix,
@@ -63,7 +63,7 @@ module.exports = async (client, message) => {
   
     if (level < client.levelCache[cmd.conf.permLevel]) {
       if (settings.systemNotice === "true") {
-        return message.channel.send(noperm);
+        return message.channel.send({noperm});
       } else {
         return;
       }
