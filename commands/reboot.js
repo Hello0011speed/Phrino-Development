@@ -7,7 +7,6 @@ exports.run = async (client, message, args, level) => {// eslint-disable-line no
       .setColor("#E51414")
       .setTimestamp();
     await message.channel.send(shutdown);
-    client.channels.get("559908132407476247").send(shutdown);
     client.commands.forEach( async cmd => {
       await client.unloadCommand(cmd);
     });
