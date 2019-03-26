@@ -1,6 +1,13 @@
-
+const Discord = require ("discord.js");
 exports.run = async (client, message, args, level) => {// eslint-disable-line no-unused-vars
-    await message.reply("Bot is shutting down.");
+  const shutdown = new Discord.RichEmbed()
+    .setTitle("Phrino · Shutdown")
+    .setDescription(`• Author of Shutdown: ` + message.author)
+    .setAuthor("Phrino", "https://cdn.discordapp.com/icons/528818044668215299/6d1ccd655df1c562ef4f43835597fe10.png?")
+    .setColor("#E51414")
+    .setTimestamp();
+    await message.channel.send(shutdown);
+    await client.channels.get("559908132407476247").send(shutdown);
     client.commands.forEach( async cmd => {
       await client.unloadCommand(cmd);
     });
