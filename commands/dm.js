@@ -10,7 +10,7 @@ exports.run = async (client, message, args, level) => { // eslint-disable-line n
       .setTimestamp();
     const embeds = new Discord.RichEmbed()
       .setTitle("Phrino · Staff Direct Message Logs")
-      .setDescription(`Message: ` + messageToSend + `\n Author: ` + message.author)
+      .setDescription(`Message: ` + messageToSend + `User:` + userToSend + `\n Author: ` + message.author)
       .setAuthor("Phrino", "https://cdn.discordapp.com/icons/528818044668215299/6d1ccd655df1c562ef4f43835597fe10.png?")
       .setColor("#E51414")
       .setTimestamp();
