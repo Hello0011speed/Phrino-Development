@@ -29,7 +29,7 @@ module.exports = async (client, message) => {
     // Checks if the bot was mentioned, with no message after it, returns the prefix.
     const prefixMention = new RegExp(`^<@!?${client.user.id}>( |)$`);
     if (message.content.match(prefixMention)) {
-      return message.channel.send({prefixe});
+      return message.channel.send(`• Prefix: \*\*${settings.prefix}\*\*`);
     }
   
     // Also good practice to ignore any message that does not start with our prefix,
@@ -61,13 +61,13 @@ module.exports = async (client, message) => {
     if (cmd && !message.guild && cmd.conf.guildOnly)
       return message.channel.send("This command is unavailable via private message. Please run this command in a guild.");
   
-    if (level < client.levelCache[cmd.conf.permLevel]) {
-      if (settings.systemNotice === "true") {
-        return message.channel.send({noperm});
-      } else {
-        return;
-      }
+  if (level < client.levelCache[cmd.conf.permLevel]) {
+    if (settings.systemNotice === "true") {
+      return message.channel.send(`• Your Permission: ${level} \"${client.config.permLevels.find(l => l.level === level).name}\" \n • Required Permission: ${client.levelCache[cmd.conf.permLevel]} \"${cmd.conf.permLevel}\" `);
+    } else {
+      return;
     }
+  }
   
     // To simplify message arguments, the author's level is now put on level (not member so it is supported in DMs)
     // The "level" command module argument will be deprecated in the future.
@@ -84,9 +84,7 @@ module.exports = async (client, message) => {
 
 //  if (level < client.levelCache[cmd.conf.permLevel]) {
 //    if (settings.systemNotice === "true") {
-//      return message.channel.send(`You do not have permission to use this command.
-//  Your permission level is ${level} (${client.config.permLevels.find(l => l.level === level).name})
-//  This command requires level ${client.levelCache[cmd.conf.permLevel]} (${cmd.conf.permLevel})`);
+//      return message.channel.send(`• Your Permission: ${level} \"${client.config.permLevels.find(l => l.level === level).name}\" \n • Required Permission: ${client.levelCache[cmd.conf.permLevel]} \"${cmd.conf.permLevel}\" `);
 //    } else {
 //      return;
 //    }
