@@ -1,20 +1,4 @@
-// The MESSAGE event runs anytime a message is received
-// Note that due to the binding of client to every event, every event
-const Discord = require ("discord.js");
-// goes `client, other, args` when this function is run.
-    const noperm = new Discord.RichEmbed()
-      .setTitle("Phrino · Insuficient Permissions")
-      .setDescription(`• Your Permission: ${level} \"${client.config.permLevels.find(l => l.level === level).name}\" \n • Required Permission: ${client.levelCache[cmd.conf.permLevel]} \"${cmd.conf.permLevel}\" `)
-      .setAuthor("Phrino", "https://cdn.discordapp.com/icons/528818044668215299/6d1ccd655df1c562ef4f43835597fe10.png?")
-      .setColor("#E51414")
-      .setTimestamp();
 
-    const prefixe = new Discord.RichEmbed()
-      .setTitle("Phrino · Prefix")
-      .setDescription(`• Prefix: \*\*${settings.prefix}\*\*`)
-      .setAuthor("Phrino", "https://cdn.discordapp.com/icons/528818044668215299/6d1ccd655df1c562ef4f43835597fe10.png?")
-      .setColor("#E51414")
-      .setTimestamp();
 module.exports = async (client, message) => {
     // It's good practice to ignore other bots. This also makes your bot ignore itself
     // and not get into a spam loop (we call that "botception").
