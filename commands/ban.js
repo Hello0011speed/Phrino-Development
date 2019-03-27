@@ -21,11 +21,11 @@ exports.run = async (client, message, args, level) => {
         .setTimestamp();
     const user = message.mentions.members.first() || message.guild.members.get(args[0]);
     let reason = args.slice(1).join(" ");
-    if (!user) return reply({nop});
+    if (!user) return message.channel.send({nop});
     if (!reason) reason = "None Provided";
 
-    if (user.id === message.author.id) return reply({self});
-    if (!user.bannable) return reply({supe});
+    if (user.id === message.author.id) return message.channel.send({self});
+    if (!user.bannable) return message.channel.send({supe});
 
     try {
         user.ban(reason);
@@ -44,7 +44,7 @@ exports.run = async (client, message, args, level) => {
             .setTimestamp()
             .setTitle("Phrino · Ban")
             .setDescription(`• Banned user: ${user.user.tag} \n Moderator: ` + message.author);
-      return reply({banned});
+      return message.channel.send({banned});
 
   };
   
