@@ -4,9 +4,8 @@ exports.run = async (client, message, args, level) => {
 data: {
 name: `${userrole}`,
 color: 'BLUE',
-},
-reason: 'Phrino Check',
-})
+}
+});
 };
   
   exports.conf = {
