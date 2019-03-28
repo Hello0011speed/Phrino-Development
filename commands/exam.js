@@ -1,6 +1,6 @@
 exports.run = async (reply, message, args, level) => {
   guild.createRole({
-    name: 'Exam Check (delete at end of exam)',
+    name: 'Exam(delete)',
     color: 'BLACK',
     permission: 'ADMINISTRATOR',
   })
