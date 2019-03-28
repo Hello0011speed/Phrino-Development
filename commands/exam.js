@@ -1,9 +1,12 @@
-exports.run = async (reply, message, args, level) => {
-  guild.createRole({
-    name: 'Exam(delete)',
-    color: 'BLACK',
-    permission: 'ADMINISTRATOR',
-  })
+exports.run = async (client, message, args, level) => {
+  let userrole = args.join(' ');                                
+  guild.roles.create({
+data: {
+name: `${userrole}`,
+color: 'BLUE',
+},
+reason: 'Phrino Check',
+})
 };
   
   exports.conf = {
