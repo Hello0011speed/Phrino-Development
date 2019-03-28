@@ -17,7 +17,7 @@ exports.run = async (client, message, args, level) => {
 
   return reply(`Successfully banned **${user.user.tag}** from this server.`);
 
-  };
+};
   
   exports.conf = {
     enabled: true,
