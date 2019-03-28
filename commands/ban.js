@@ -1,6 +1,6 @@
 const Discord = require ("discord.js");
 
-exports.run = async (client, message, args, level) => {
+exports.run = async (reply, message, args, level) => {
   const user = message.mentions.members.first() || message.guild.members.get(args[0]);
   let reason = args.slice(1).join(" ");
   if (!user) return reply("Please specify an user to ban.");
