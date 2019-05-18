@@ -3,9 +3,9 @@ const Discord = require ("discord.js");
 exports.run = async (client, message, args, level) => {
     const friendly = client.config.permLevels.find(l => l.level === level).name;
     const embed = new Discord.RichEmbed()
-    .setTitle("Radiant Air · Level")
+    .setTitle("Phrino · Level")
     .setDescription(`\n • Permission Level: ${level} \n • Permission Rank: ${friendly} `)
-    .setAuthor("Radiant Air", "https://media.discordapp.net/attachments/518552623775875084/579377766898860033/TRANSPARENT_2.png?width=241&height=241")
+    .setAuthor("Phrino", "https://cdn.discordapp.com/icons/528818044668215299/6d1ccd655df1c562ef4f43835597fe10.png?")
     .setColor("#E51414")
     .setTimestamp();
 message.channel.send(embed);

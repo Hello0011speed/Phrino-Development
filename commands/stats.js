@@ -6,9 +6,9 @@ require("moment-duration-format");
 exports.run = (client, message, args, level) => { // eslint-disable-line no-unused-vars
   const duration = moment.duration(client.uptime).format(" D [days], H [hrs], m [mins], s [secs]");
   const embed = new Discord.RichEmbed()
-      .setTitle("Radiant Air · Stats")
+      .setTitle("Phrino · Stats")
       .setDescription(`\n • Mem Usage: ${(process.memoryUsage().heapUsed / 1024 / 1024).toFixed(2)} MB \n • Uptime: ${duration} \n • Users: ${client.users.size.toLocaleString()} \n • Servers: ${client.guilds.size.toLocaleString()} \n • Channels: ${client.channels.size.toLocaleString()}`)
-      .setAuthor("Radiant Air", "https://media.discordapp.net/attachments/518552623775875084/579377766898860033/TRANSPARENT_2.png?width=241&height=241")
+      .setAuthor("Phrino", "https://cdn.discordapp.com/icons/528818044668215299/6d1ccd655df1c562ef4f43835597fe10.png?")
       .setColor("#E51414")
       .setTimestamp();
   message.channel.send(embed);

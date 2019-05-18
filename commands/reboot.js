@@ -1,9 +1,9 @@
 const Discord = require ("discord.js");
 exports.run = async (client, message, args, level) => {// eslint-disable-line no-unused-vars
   const shutdown = new Discord.RichEmbed()
-      .setTitle("Radiant Air · Shutdown")
+      .setTitle("Phrino · Shutdown")
       .setDescription(`• Author of Shutdown: ` + message.author)
-      .setAuthor("Radiant Air", "https://media.discordapp.net/attachments/518552623775875084/579377766898860033/TRANSPARENT_2.png?width=241&height=241")
+      .setAuthor("Phrino", "https://cdn.discordapp.com/icons/528818044668215299/6d1ccd655df1c562ef4f43835597fe10.png?")
       .setColor("#E51414")
       .setTimestamp();
     await message.channel.send(shutdown);

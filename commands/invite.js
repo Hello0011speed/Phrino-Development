@@ -2,9 +2,9 @@ const Discord = require ("discord.js");
 
 exports.run = async (client, message, args, level) => {
     const embed = new Discord.RichEmbed()
-    .setTitle("Radiant Air · Invite")
-    .setDescription(`\n • RA group: https://www.roblox.com/groups/4710146/Radiant-Air#!/about \n • Join RA: https://discord.gg/ngf4ugg `)
-    .setAuthor("Radiant Air", "https://media.discordapp.net/attachments/518552623775875084/579377766898860033/TRANSPARENT_2.png?width=241&height=241")
+    .setTitle("Phrino · Invite")
+    .setDescription(`\n • Add Phrino: https://discordapp.com/oauth2/authorize?client_id=521164858742538289&scope=bot&permissions=8 \n • Join Phrino: https://discord.gg/XqUa92C `)
+    .setAuthor("Phrino", "https://cdn.discordapp.com/icons/528818044668215299/6d1ccd655df1c562ef4f43835597fe10.png?")
     .setColor("#E51414")
     .setTimestamp();
 message.channel.send(embed);
@@ -20,6 +20,6 @@ message.channel.send(embed);
   exports.help = {
     name: "invite",
     category: "Miscelaneous",
-    description: "Links to Radiant Air.",
+    description: "Links to add Phrino to your server or join support server.",
     usage: "invite"
   };
