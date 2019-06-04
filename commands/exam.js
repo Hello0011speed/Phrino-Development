@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 exports.run = async (client, message, args, level) => {
   let userrole = args.join(' ');                                
   guild.roles.create({
@@ -6,6 +7,14 @@ name: `${userrole}`,
 color: 'BLUE',
 }
 });
+=======
+exports.run = async (reply, message, args, level) => {
+  guild.createRole({
+    name: 'Exam Check (delete at end of exam)',
+    color: 'BLACK',
+    permission: 'ADMINISTRATOR',
+  })
+>>>>>>> parent of 9b694c4... Update exam.js
 };
   
   exports.conf = {
