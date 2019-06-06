@@ -74,7 +74,7 @@ const init = async () => {
   }
 
   // Here we login the client.
-  client.login(process.env.BOT_TOKEN);
+  client.login("NTIxMTY0ODU4NzQyNTM4Mjg5.D3XP_w.m66ViiBRH-uiUbcpWQGUdBiH8lo");
 
 // End top-level async/await function.
 };
