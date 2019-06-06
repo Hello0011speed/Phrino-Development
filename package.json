@@ -8,6 +8,7 @@
     "start": "node client.js"
   },
   "engines": {
+    "build": "bower install && node-gyp rebuild",
     "node": "^12.4.0"
   },
   "repository": {
